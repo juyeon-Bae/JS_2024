@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>필요한 연필 다스 구하기</title>
+</head>
+<body>
+    <script>
+        function solution(n){
+            // My Code
+            // let answer = 0;
+            //if(n%12==0)  answer = parseInt(n/12) 
+            //else answer = parseInt(n/12+1)
+
+            //선생님 해설 코드- 방법 1)
+            // let answer = (2/12)
+            //if((n%12)!==0) answer = parseInt(n/12)+1;
+            
+            //  return answer;
+
+            //teacher - 방법 2)
+            let answer = Math.ceil(n/12);
+            return answer;
+
+
+            //ceil() 함수 : 무조건 올림
+            console.log(Math.ceil(2.11)) //3
+            
+            //floor() 함수 : 무조건 내림
+            console.log(Math.floor(-2.11)) //-3
+
+             //round() 함수 : 반올림
+             console.log(Math.round(2.99)) // 3
+             console.log(Math.round(2.48)) // 2
+
+            
+        }
+
+        console.log(solution(25)) //출력값 3
+      //  console.log(solution(178)) //출력값 15
+    </script>
+</body>
+</html>
