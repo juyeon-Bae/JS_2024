@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>String 내장 함수</title>
+</head>
+<body>
+    <script>
+        // length : 문자열의 길이를 리턴
+        var txt = "ABCDEFGHIGKLMNOP"
+        console.log(txt.length)
+        
+
+        // indexOf : 해당 글자의 index를 찾아줌
+        var str = "Please locate where 'locate'"
+        console.log(str.indexOf("locate"))  // 출력값 : 7
+        console.log(str.indexOf("bae"))     // 출력값 : -1(찾는 단어가 없음)
+
+        if(str.indexOf("locate") > -1){
+            console.log("locate 문자 발견")
+        } 
+
+        // lastIndexOf : 해당 글자의 index를 뒤에서부터 찾아준다
+        var str = "Please locate where 'locate'"
+        console.log(str.lastIndexOf("locate")) // 출력값 : 21
+
+        // search
+        console.log(str.search("locate"))      // 출력값 : 7
+
+        // slice : 해당 문자열을 (잘라서) 가져옴
+        var str2 = "apple, Banana, kiwi"
+        console.log(str2.slice(7,13))       // 7 ~ (13-1) 까지 : 출력값 : Banana
+        console.log(str2.slice(7))          // 출력값 : Banana, Kiwi
+        console.log(str2.slice(-12,-6))     // 출력값 : Banana
+        console.log(str2.slice(-12))        // 출력값 : Banana, Kiwi
+        
+        //substring : substring()
+        console.log(str2.substring(7,13))  
+        
+        // substr 
+        console.log(str2.substr(7,6))       // 7번 index에서 6글자를 가지고 옴
+
+        var person1 = "070813"
+        console.log(person1.substr(0,2))    // 년도 가지고 오기
+        console.log(person1.substr(2,2))    // 월 가지고 오기
+        console.log(person1.substr(4,2))    // 일 가지고 오기
+        
+        var person2 = "2007-08-13"
+        console.log(person2.indexOf("-"))
+        console.log(person2.substr(0,person2.indexOf("-")))
+        console.log(person2.substring(0,4))
+
+        // replace : 문자열 자리 바꾸기(대치)
+        var str1 = "Pleas visit here"
+        var str2 = str1.replace("here","there")
+        console.log(str2)
+
+        var str3 = "Pleas visit here here here"
+        var str4 = str3.replace("here", "there")
+
+        var str5 = str3.replaceAll("here","there")  //replaceAll
+        console.log(str5)
+
+        //정규표현식
+        var str6 = "Pleas visit here here here"
+        var str7 = str6.replace(/here/g, "there")  //gi를 쓰면 다 바뀜(replaceAll), g = global
+        console.log(str7)
+
+        var str8 = "Pleas visit here here here"
+        var str9 = str6.replace(/here/gi, "there")  //gi를 쓰면 다 바뀜(대소문자 구분X, replaceAll), i = ignore : 대소문자 무시
+        console.log(str9)
+
+        //대문자로 : uppercase
+        var str10 = "Pleas visit Here HERE here"
+        console.log(str10.toUpperCase())
+
+        
+        //소문자로 : lowercase
+        var str10 = "Pleas visit Here HERE here"
+        console.log(str10.toLowerCase())
+
+        // 데이터베이스 : JOHN, john, John
+        
+
+
+    </script>
+</body>
+</html>
