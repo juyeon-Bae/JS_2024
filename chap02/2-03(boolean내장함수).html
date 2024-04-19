@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>boolean 내장객체</title>
+</head>
+<body>
+    <script>
+        var x = true; 
+        var y = new Boolean(true);
+        console.log(typeof(x));  //callbyvalue
+        console.log(typeof(y));
+
+        console.log(x == y)    //true
+        console.log(x === y)   //false (type이 틀림)
+
+        var x2 = "abc"
+        var y2 = new String("abc")
+        console.log(typeof(x2))
+        console.log(typeof(y2)) //object
+
+        console.log(x2 == y2)    
+        console.log(x2 === y2) 
+
+       // console.log(Boolean(10>9))  //object type의 true
+        // consol.log(10>9)            //boolean type의 true
+
+        var x3 = 0
+        console.log(x)
+        console.log(Boolean(x))
+
+        var x = ""
+        console.log(Boolean(x)) //false(값을 할당하지 않아서)
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>
