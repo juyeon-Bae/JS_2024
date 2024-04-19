@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>Array 내장함수</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        
+        // toString()
+        var fruits = ["banana","orange","apple"]
+        console.log(fruits.toString())      //하나의 배열을 문자열로 바꿈
+
+        //join()
+        console.log(fruits.join("***"))     // ***를 기준으로 문자열로 만듦
+
+        var txt1 = "banana<br>"
+        txt1 += "orange<br>" 
+        txt1 += "apple<br>"
+        console.log(txt1)
+
+        document.getElementById("div1").innerHTML = txt1
+        var arr1 = []
+        arr1.push("banana")
+        arr1.push("orange")
+        arr1.push("apple")
+        //console.log(arr1)
+        document.getElementById("div1").innerHTML = arr1.join("<br>")
+
+        //pop() : 배열의 가장 마지막 항목을 제거하여 리턴함
+
+        var fruits2 = ["banana","orange","apple"]
+        var arr2 = fruits2.pop()
+        console.log(arr2)
+        console.log(fruits2)
+
+        // push() : 배열의 가장 마지막에 새로운 항목 추가
+        fruits2.push("kiwi")
+        console.log(fruits2)
+
+        //shift() : 배열의 첫번째 항목을 제거하여 return
+        var fruits3 = ["banana","orange","apple"]
+        var str = fruits3.shift()
+        console.log(str)
+        console.log(fruits3)
+
+        // unshift() : 배열의 첫번째에 새로운 item을 추가
+        var fruits4 = ["banana","orange","apple"]
+        fruits4.unshift("lemon")
+        console.log(fruits4)
+        fruits4[0] = "grape"       //lemon --> grape
+        console.log(fruits4)
+        console.log(fruits4.length)
+        fruits4[fruits4.length -1] = "peach"
+        console.log(fruits4)
+
+        //splice(시작위치, 삭제할 항목 수) 
+        var fruits5 = ["banana","orange","apple"]
+        fruits5.splice(1,2) //banana
+        console.log(fruits5)
+        fruits5.splice(1,0,"Lemon","kiwi")  
+        console.log(fruits5)    //banana, Lemon, kiwi  (추가)
+        fruits5.splice(1,1,"Lemon","kiwi")  
+
+        //concat() : 두 개의 배열을 하나로 만들어줌
+        var BTS = ["v"]
+        var BTS2 = ["jk","rm"]
+        var result = BTS.concat(BTS2)
+        console.log(result)
+
+        // slice(a,b) a ~ b-1까지 항목을 가져옴
+        var fruits6 = ["banana","orange","apple"]
+        var fruits7 = fruits6.slice(1)
+        console.log(fruits7)
+        var fruits7 = fruits6.slice(1,2)
+        console.log(fruits7)
+        var fruits7 = fruits6.slice(1,3)
+        console.log(fruits7)
+
+        // sort() : 정렬
+        var fruits8 = ["banana","orange","apple","lemon","kiwi"]
+        console.log(fruits8.sort())
+
+        var points = [40,100,70,21,99]
+       // console.log(points.sort())  //숫자를 문자로 인식하여 오름차순 정렬
+
+        points.sort(function(a,b) {
+           // if(a>b) return 1    //return true
+            //else return -1      //return false
+
+            return a-b  // 오름차순, 내림차순 : b-a
+
+        })
+        
+        
+        console.log(points)
+        console.log(points.reverse())       // 내림차순
+
+        // object 정렬
+        var persons = [
+            {name: "유재석", point:78},
+            {name: "김종국", point:92},
+            {name: "양세찬", point:76},
+            {name: "하하", point:81},
+        ]
+       // console.log(persons.sort())        //object에는 정렬 x
+        persons.sort(function(a,b){
+           if(a.point > b.point)
+           return 1
+           else return -1
+        })
+
+
+        persons.sort(function(a,b){
+            // 삼항연산자
+            return (a.point>b.point) ? 1:-1
+        })
+        console.log(persons)
+
+
+        // (**매우 중요**)  filter() : 조건에 맞는 배열만 return
+        var persons = [
+        {name: "유재석", point:78},
+        {name: "김종국", point:92},
+        {name: "양세찬", point:76},
+        {name: "하하", point:81},
+    ]
+
+        var pass= persons.filter(function(per){
+            return per.point>80
+        })
+        console.log(pass)
+
+        // filter()를 for문으로 구현하면 매우 복잡        
+        var persons = [
+        {name: "유재석", point:78, city:"서울"},
+        {name: "김종국", point:92, city:"대구"},
+        {name: "양세찬", point:76, city:"서울"},
+        {name: "하  하", point:81, city:"제주"},
+    ]
+      var seoul=  persons.filter(function(per){
+            return per.city === "서울"
+      })
+      console.log(seoul)
+    
+       
+      
+      var arr3 = [1,2,3,4]
+      var total = 0;
+      for(var x of arr3){
+       total += x
+      }
+      console.log(total)
+    
+     // **매우 중요** reduce(a, c)   a: 누산기, b: 현재값
+     var arr4 = [1,2,3,4]
+     var total = arr4.reduce(function(a,c){
+        return a+c
+     })
+
+     console.log(total)
+      
+
+     // map()   filter와는 다른 형태로 새로운 배열 형성
+     var userList = [
+        {firstName: "재석", lastName:"유",  email:"yu@email.com"},
+        {firstName: "종국", lastName:"김",  email:"kim@email.com"}, 
+        {firstName: "세찬", lastName:"양",  email:"yang@email.com"}, 
+        {firstName: "석진", lastName:"지",  email:"ji@email.com"}, 
+    ]
+
+    var userList2 = userList.map(function(user){
+        return {fullName: user.firstName + user.lastName, fN:user.firstName, lN:user.lastName } //key : fN 
+    })
+    console.log(userList2)
+    
+    </script>
+</body>
+</html>
