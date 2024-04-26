@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>문자 찾기</title>
+</head>
+<body>
+    <script>
+        function solution(s, t){
+            let answer = 0;
+            /*mine : for문을 이용 
+            for(s of str){
+                if(s === t) answer++;
+            }*/
+
+            /* teacher's : 내장함수 이용 split()*/
+            answer = s.split(t).length -1
+            return answer;
+        }
+        let str = "COMPUTERPROGRAMMING"
+        console.log(solution(str,'R'))
+    </script>
+</body>
+</html>
