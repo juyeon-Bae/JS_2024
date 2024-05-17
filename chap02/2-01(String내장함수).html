@@ -78,9 +78,46 @@
         console.log(str10.toLowerCase())
 
         // 데이터베이스 : JOHN, john, John
-        
+        /* 
+        var text1 = "Hello"
+        var text2 = "World"
+        var text3 = text1 +" "+ text2
+        console.log(text3)
 
+        consol.log(text1.concat(" "+text2)) //문자열 연결 함수 : concat()
+        console.log(text1.concat("", "Hone", " Love",text2))*/
+
+        //padStart
+        var str11 = "1234"
+       // console.log(str11.padStart(8,0)) // 0 8개 8
+        console.log("C-"+ str11.padStart(8,"*")) // ex) 상품번호, 제품코드 개발시 사용
+
+
+        // 특정 자릿수를 통일하기 위해서 사용
+        var str12 = "5"
+        var str12 = "15"
+        console.log(str12.padStart(2,0)) 
+
+        var str13 = "5"
+        var str13 = "15"
+        console.log(str13.padEnd(4,0))  // 4자리로 잡음, 빈자리는 0으로 처리
+
+        // charAt() : 측정한 위치의 글자를 찾음 / indexOf()와 반대
+        var str14 = "Hello World";
+        console.log(str14.charAt(1)) //e
+
+        // split✨✨✨ 
+        var tags = "키보드, 기계식, 블루투스"
+        var arr1 = tags.split(",",-1)
+        console.log(arr1)
+
+        var birthday = "2007-08-28"
+        var arr2 = birthday.split("-")
+        console.log(arr2)
+
+        
 
     </script>
 </body>
 </html>
+
