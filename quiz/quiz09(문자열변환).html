@@ -4,9 +4,17 @@
 </head>
 <body>
     <script>
-        function solution(s){
-            let answer = str.replaceAll("A","#");
-            return answer;
+        function solution(str){
+            let answer = "";
+
+            /*방법1
+            let answer = str.replace(/A/g,'#');
+            return answer;*/
+
+            for(x of str){
+                if(x==="A") answer +="#";
+                else answer += x;
+            }
         }
 
         let str = "BANANA"
