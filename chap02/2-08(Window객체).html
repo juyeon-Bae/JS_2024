@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Window 객체</title>
+</head>
+<body>
+    <script>
+        // window 내장객체
+        console.log(window);
+        alert('환영합니다');    //window.alert window생략 가능
+        var yes = confirm('탈퇴하겠습니까?');
+        console.log(yes);
+
+        if(confirm('탈퇴하겠습니까?')){
+            // 탈퇴 처리
+            console.log('회원 탈퇴')
+        }
+
+        var txt = prompt('이름을 입력해주세요')
+        console.log(txt)
+
+        if(txt === null)
+        console.log('취소')
+
+        else if(txt === "")
+        console.log('공백')
+
+        else if(txt != null)
+        console.log(txt)
+
+
+        window.open('https://naver.com')
+        window.print(); //현재 페이지를 출력
+
+        //setTimeout
+        setTimeout(function(){
+            console.log("안녕하세요");
+        },3000);
+
+        var i = 0;
+        var fnc = setInterval(function(){
+            console.log('환영합니다 ' + i); i++  
+            if(i===10) clearInterval(fnc); //종료
+        },3000);
+
+        
+
+    </script>
+</body>
+</html>
