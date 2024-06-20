@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>가운데 문자를 출력</title>
+</head>
+<body>
+    <script>
+        // 가운데 문자를 출력, 단어 길이가 짝수면 가운데 2개의 문제 출력
+        function solution(str){
+            let answer;
+            
+            let len = str.length/2;
+            for(let i=0; i<str.length; i++){
+                if(str.length%2==0) answer = str.substring(len-1,len+1);
+                else answer = str.substring(len,len+1);
+            }
+            
+            return answer;
+        }
+        let str = "study";
+
+        /*teacher's code (substring, substr)
+            let answer = "";
+            let mid = Math.floor(s.length/2);
+            if(s.length%2===1) answer = str.substring(mid,mid+1);
+            else answer = str.substring(mid-1,mid+1)
+        */
+        
+        console.log(solution(str))
+    </script>
+</body>
+</html>

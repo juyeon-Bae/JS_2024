@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>중복된 문자 제거하기</title>
+</head>
+<body>
+    <script>
+        function solution(str){
+           // let answer='';
+            /* 
+            for(x of str){
+                if(!answer.includes(x))
+                answer +=x;
+            }*/
+            // return str.split('').filter((x,idx,arr)=>arr.indexOf(x)===idx ).join("");
+            let answer = 0;
+            let word = prompt('찾고자하는 문자 입력해주세요.')  //ex) k 입력 
+            console.log(word)
+
+            let pos = str.indexOf(word);
+            while(pos!== -1){
+                answer++;
+                pos = str.indexOf(word, pos+1);
+            }
+            return answer;
+        }
+
+        let str = "ksekkset"; //kset
+        console.log(solution(str))
+    </script>
+</body>
+</html>
