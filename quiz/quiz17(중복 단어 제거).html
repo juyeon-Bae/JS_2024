@@ -4,9 +4,9 @@
 </head>
 <body>
     <script>
-        function solution(str){
+        function solution(s){
            // let answer= [];
-           /* for(x of str){
+               /* for(x of str){
                 if(!answer.includes(x)){
                     answer.push(x);
                 }
@@ -18,7 +18,7 @@
           });*/
 
           //arrow function 사용
-          let answer = str.filter((v,idx)=> idx === str.indexOf(v));
+          let answer = s.filter((v,idx)=> idx === s.indexOf(v));
           
            
            return answer;
