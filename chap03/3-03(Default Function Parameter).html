@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Default Function Parameter</title>
+</head>
+<body>
+    <script>
+        function say1(message){
+           console.log(message) 
+        }
+        say1('hello')
+        //say1();  undefined
+
+        function say2(message){
+            if(message !=undefined){
+                console.log(message)
+            }
+            else{
+                console.log('매개변수가 없습니다.')
+            }
+        }
+        say2('hi')
+        say2()
+
+        function plus1(a,b){
+            console.log(a+b);
+        }
+        plus1(4,5);
+
+        //Default Function Parameter
+        function say3(message = "매개변수가 없습니다."){
+            console.log(message);
+        }
+        say3('hi');
+        say3();  //매개변수가 없습니다
+
+        function plus2(a=0,b=0){
+            console.log(a+b);
+        }
+        plus2(1); //매개변수에 a=0, b=0을 줘서
+        plus2(1,2);
+    </script>
+</body>
+</html>
