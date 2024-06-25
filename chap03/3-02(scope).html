@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>scope</title>
+</head>
+<body>
+    <script>
+        function myFunction(){
+            //local Scope : 지역변수
+            var carName1 = '기아자동차';
+            console.log(carName1);
+        }
+       // console.log(carName1); //ReferenceError : carName1인지x
+       myFunction()
+
+       // Global Scope : 전역변수
+       var carName2 = '현대자동차'; 
+       myFunction2(); //myFunction2를 미리 컴파일 시킴
+
+       function myFunction2(){
+        console.log(carName2);
+       }
+       //myFunction2();//호출
+
+
+     //  myFunction3(); //myFunction3은 변수이기에 미리 컴파일하지 않음 (실행x)
+       var myFunction3 = function(){
+            console.log("myFunction 호출");
+       }
+       myFunction3();
+       
+       
+    </script>
+</body>
+</html>
